@@ -10,6 +10,10 @@ var app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', function(req, res) {
+    console.log('index');
+});
+
 app.get('/sendSMS', function(req, res) {
     sms.sendSMS();
 });
