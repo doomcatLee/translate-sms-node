@@ -1,9 +1,14 @@
 {
-    "name": "express-template-HelloWorld",
-    "description": "Hello World ExpressJS WebService",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "latest"
-    }
+  "name": "node-translation-station",
+  "description": "Express.js Application",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "latest",
+    "twilio": "^3.5.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
 }
