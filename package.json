@@ -6,7 +6,9 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "latest",
-    "twilio": "^3.5.0"
+    "twilio": "^3.5.0",
+    "@google-cloud/translate": "0.8.2",
+    "yargs": "8.0.2"
   },
   "scripts": {
     "start": "node server.js"
