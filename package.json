@@ -4,11 +4,16 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "async": "^2.5.0",
+    "asyncawait": "^1.0.6",
     "body-parser": "^1.17.1",
     "express": "latest",
-    "twilio": "^3.5.0",
-    "@google-cloud/translate": "0.8.2",
-    "yargs": "8.0.2"
+    "google-cloud": "^0.56.0",
+    "node-google-translate-skidz": "^1.1.1",
+    "promise": "^8.0.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "twilio": "^3.5.0"
   },
   "scripts": {
     "start": "node server.js"
