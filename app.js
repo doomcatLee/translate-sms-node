@@ -1,13 +1,15 @@
 var port = process.env.PORT || 3000;
 
+
 var express = require('express');
 var http = require('http');
 
 var path = require('path');
 var bodyParser = require('body-parser');
+//Custom library
 var sms = require('./public/js/sms.js');
+var languageFilter = require('./public/js/language.js');
 
-var rp = require('request-promise');
 
 var translate = require('node-google-translate-skidz');
 
@@ -24,29 +26,23 @@ var gcloud = require('google-cloud')({
     keyFilename: '/Users/doomcat/downloads/doki_oauth.json'
 });
 
-var gtranslate = gcloud.translate();
-
 app.get('/', function(req, res) {
     console.log('index');
 });
 
-
 app.post('/sendSMS', function(req, res) {
     var to = req.param('To');
     var body = req.param('Body');
+    var language = req.param('Language');
 
     translate({
         text: body,
         source: 'es',
-        target: 'ar'
+        target: languageFilter.filterLang(language)
     }, function(result) {
         console.log(result);
         sms.sendSMS(to, result.toString());
     });
-
-
 });
-
-
 
 app.listen(port);
